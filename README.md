@@ -1,54 +1,58 @@
-# fysiofresh
+# Kanban Board
 
-This template should help get you started developing with Vue 3 in Vite.
+A task management application built using Vue 3, Vuetify and the Composition API.  
+The project includes TypeScript support, modular logic via composables, and unit testing with Vitest.  
+The application allows users to manage tasks across multiple workflow stages in a clean Kanban interface.
 
-## Recommended IDE Setup
+## Features
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Kanban board with tasks organized into columns
+- Create, edit and delete tasks
+- Drag-and-drop functionality for moving tasks between status columns
+- Vuetify-based UI components
+- Composition API structure for logic separation
+- TypeScript interfaces for tasks, priority and status
+- Vitest unit tests for core functionality
 
-## Recommended Browser Setup
+## Architecture
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+### Composition API  
+All task management logic is located inside a composable (`useKanbanBoard`), allowing components to focus purely on presentation and user interaction.
 
-## Type Support for `.vue` Imports in TS
+### TypeScript  
+The system defines strong types for `Task`, `Priority` and `StatusId`, increasing clarity and minimizing runtime issues.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Testing
 
-## Customize configuration
+Vitest is used to validate the Kanban logic.  
+Tests are located in `src/__tests__/`.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Run tests using:
+
+```
+npm run test
+```
 
 ## Project Setup
 
-```sh
+Install dependencies:
+
+```
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Start development server:
 
-```sh
+```
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Build for production:
 
-```sh
+```
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Hosting
 
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+The project supports deployment on services such as Vercel, GitHub Pages or Netlify.
