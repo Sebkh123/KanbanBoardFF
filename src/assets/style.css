@@ -1,0 +1,146 @@
+/* ============================================
+   >>> Global design <<<
+   ============================================ */
+
+
+
+.task-board {
+  min-height: 100vh;
+  padding: 40px;
+
+  background: linear-gradient(
+    135deg,
+    #b8a5cc 0%,     /* faded purple */
+    #c8bdd7 35%,    /* smooth blend */
+    #d7d2dd 70%,    /* soft lilac-grey */
+    #ccc9d2 100%    /* very light grey-purple */
+  );
+
+  /* soft shimmer movement */
+  background-size: 120% 120%;
+  animation: softDrift 18s ease-in-out infinite;
+}
+
+@keyframes softDrift {
+  0%   { background-position: 45% 45%; }
+  50%  { background-position: 55% 55%; }
+  100% { background-position: 45% 45%; }
+}
+
+.task-board h1 {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.9rem;
+  font-weight: 400;          /* fine, elegant */
+  color: #2a2f3e;            /* dark blue-grey */
+  text-align: left;
+  margin-bottom: 25px;
+  letter-spacing: 0.6px;
+
+  /* subtle depth – not too strong */
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.22),
+    0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Column card */
+.column-card {
+  border-radius: 16px !important;
+  background: white !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Column title */
+.column-title {
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+/* Task card */
+.task-card {
+  background: #ffffff !important;
+  border-radius: 14px !important;
+  border: 1px solid #e7e7e7 !important;
+  transition: 0.15s ease !important;
+}
+.task-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Task title */
+.task-title {
+  font-weight: 600 !important;
+  font-size: 15px !important;
+}
+
+/* Task description */
+.task-desc {
+  color: #666 !important;
+  font-size: 13px !important;
+  margin-top: 6px !important;
+}
+
+/* Layout of header inside task */
+.task-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Buttons inside tasks */
+.task-actions {
+  display: flex !important;
+  gap: 6px !important;
+}
+
+/* Rounded “pill-style” buttons */
+.task-actions .v-btn {
+  min-width: 70px !important;
+  height: 30px !important;
+  border-radius: 18px !important;
+  padding: 0 12px !important;
+  text-transform: none !important;
+  font-size: 13px !important;
+  box-shadow: none !important;
+  border: 1px solid #ddd !important;
+}
+
+/* Center text & icon inside button */
+.task-actions .v-btn .v-btn__content {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 4px !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Light hover */
+.task-actions .v-btn:hover {
+  background: #f2f2f2 !important;
+}
+
+/* Priority chip styling */
+.priority-chip {
+  border-radius: 14px !important;
+  text-transform: capitalize !important;
+  font-size: 12px !important;
+  padding: 4px 10px !important;
+}
+
+/* Priority colors */
+.priority-chip[color="red"] {
+  background: #ffe5e5 !important;
+  color: #d9534f !important;
+}
+.priority-chip[color="orange"] {
+  background: #fff2e0 !important;
+  color: #f0ad4e !important;
+}
+.priority-chip[color="green"] {
+  background: #e6f7e6 !important;
+  color: #5cb85c !important;
+}
+
+
